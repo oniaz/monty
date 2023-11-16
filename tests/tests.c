@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * printTest - testing tokenization
+ * 
+ * Return: nothing
+ */
 void printTest(void)
 {
 	int i = 0;

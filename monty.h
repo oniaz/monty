@@ -12,7 +12,7 @@ extern char **instructions_array;
 extern char *lineBuffer;
 
 /* tests */
-void printTest(void);
+/*void printTest(void); */
 
 /* line */
 int _wordcounter(char *str);
