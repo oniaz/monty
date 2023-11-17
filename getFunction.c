@@ -15,7 +15,8 @@ void (*getFunc(char *str))(void)
 		{"pall", pall},
 		{NULL, NULL}};
 
-	while (instructionsMenu[i].opcode != NULL && strcmp((instructionsMenu[i].opcode), str) != 0)
+	while (instructionsMenu[i].opcode != NULL &&
+			strcmp((instructionsMenu[i].opcode), str) != 0)
 		i++;
 	if (!instructionsMenu[i].opcode)
 	{
