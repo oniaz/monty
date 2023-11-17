@@ -10,20 +10,20 @@
 /* Structs */
 
 /**
- * struct bigno_s - doubly linked list representation of a bigno (or queue)
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the bigno (or queue)
- * @next: points to the next element of the bigno (or queue)
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for bigno, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO
  */
-typedef struct bigno_s
+typedef struct stack_s
 {
         int n;
-        struct bigno_s *prev;
-        struct bigno_s *next;
-} bigno_t;
+        struct stack_s *prev;
+        struct stack_s *next;
+} stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -31,22 +31,22 @@ typedef struct bigno_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for bigno, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(bigno_t **bigno, unsigned int line_number);
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* change this back to bigno_s when done!!!*/
+/* change this back to stack_s when done!!!*/
 
 /* External Variables */
 extern unsigned int lineCount;
 extern char **instructions_array;
 extern char *lineBuffer;
-extern bigno_t *top;
-extern bigno_t *bottom;
+extern stack_t *top;
+extern stack_t *bottom;
 
 /* Function Parameters */
 
@@ -63,10 +63,10 @@ void freeInstructionsArray(void);
 
 /* misc */
 int isNumber(char *str);
-void (*getFunc(char *s))(bigno_t **bigno, unsigned int line_number);
+void (*getFunc(char *s))(stack_t **stack, unsigned int line_number);
 
 /* instruction operations */
-void push(bigno_t **bigno, unsigned int line_number);
-void pall(bigno_t **bigno, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 #endif

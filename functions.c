@@ -7,9 +7,9 @@
  *
  * Return: nothing
  */
-void push(bigno_t **stackTop, unsigned int lineNumber)
+void push(stack_t **stackTop, unsigned int lineNumber)
 {
-	bigno_t *s_item;
+	stack_t *s_item;
 	int value;
 
 	if (!instructions_array[1] || !isNumber(instructions_array[1]))
@@ -19,7 +19,7 @@ void push(bigno_t **stackTop, unsigned int lineNumber)
 	}
 	value = atoi(instructions_array[1]);
 
-	s_item = malloc(sizeof(bigno_t));
+	s_item = malloc(sizeof(stack_t));
 	if (!s_item)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
@@ -41,9 +41,9 @@ void push(bigno_t **stackTop, unsigned int lineNumber)
  *
  * Return: nothing
  */
-void pall(bigno_t **stackTop, unsigned int lineNumber)
+void pall(stack_t **stackTop, unsigned int lineNumber)
 {
-	bigno_t *ptr = *stackTop;
+	stack_t *ptr = *stackTop;
 
 	(void)lineNumber;
 	while (ptr)

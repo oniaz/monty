@@ -4,8 +4,8 @@ int main(int argc, char **argv);
 unsigned int lineCount = 0;
 char **instructions_array = NULL;
 char *lineBuffer = NULL;
-bigno_t *top = NULL;
-bigno_t *bottom = NULL;
+stack_t *top = NULL;
+stack_t *bottom = NULL;
 
 /**
  * main - checks number of arguemnts,
