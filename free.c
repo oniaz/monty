@@ -10,17 +10,17 @@ void freeInstructionsArray(void)
 {
 	int i = 0;
 
-	if (!instructions_array)
+	if (!instructionsArray)
 		return;
 
-	while (instructions_array[i])
+	while (instructionsArray[i])
 	{
-		free(instructions_array[i]);
-		instructions_array[i] = NULL;
+		free(instructionsArray[i]);
+		instructionsArray[i] = NULL;
 		i++;
 	}
-	free(instructions_array);
-	instructions_array = NULL;
+	free(instructionsArray);
+	instructionsArray = NULL;
 }
 
 /**
@@ -30,12 +30,12 @@ void freeInstructionsArray(void)
  */
 void freeStack(void)
 {
-	bingo_t *newtop;
+	pile_t *newTop;
 
 	while (top)
 	{
-		newtop = top->prev;
+		newTop = top->prev;
 		free(top);
-		top = newtop;
+		top = newTop;
 	}
 }

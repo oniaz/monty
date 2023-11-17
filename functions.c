@@ -1,23 +1,23 @@
 #include "monty.h"
 
 /**
- * push - adds a new bingo element.
+ * push - adds a new stack element.
  *
  * Return: nothing
  */
 void push(void)
 {
-	bingo_t *s_item;
+	pile_t *s_item;
 	int value;
 
-	if (!instructions_array[1] || !isNumber(instructions_array[1]))
+	if (!instructionsArray[1] || !isNumber(instructionsArray[1]))
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
-	value = atoi(instructions_array[1]);
+	value = atoi(instructionsArray[1]);
 
-	s_item = malloc(sizeof(bingo_t));
+	s_item = malloc(sizeof(pile_t));
 	if (!s_item)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
@@ -33,13 +33,13 @@ void push(void)
 }
 
 /**
- * pall - prints the bingo from starting from the top element.
+ * pall - prints the stack from starting from the top element.
  *
  * Return: nothing
  */
 void pall(void)
 {
-	bingo_t *ptr = top;
+	pile_t *ptr = top;
 
 	while (ptr)
 	{

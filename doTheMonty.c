@@ -43,32 +43,32 @@ void tokenize(void)
 	if (counter == 0)
 		return;
 
-	instructions_array = malloc(sizeof(char *) * (counter + 1));
-	if (!instructions_array)
+	instructionsArray = malloc(sizeof(char *) * (counter + 1));
+	if (!instructionsArray)
 		return; /* memory allocation failure */
 	token = strtok(lineBuffer, delimiter);
 
 	while (token != NULL)
 	{
-		(instructions_array)[i] = (char *)malloc(strlen(token) + 1);
+		(instructionsArray)[i] = (char *)malloc(strlen(token) + 1);
 		done++;
-		if (!(instructions_array)[i]) /* memory allocation failure */
+		if (!(instructionsArray)[i]) /* memory allocation failure */
 		{
 			while (done)
 			{
-				free((instructions_array)[done - 1]);
-				(instructions_array)[done - 1] = NULL;
+				free((instructionsArray)[done - 1]);
+				(instructionsArray)[done - 1] = NULL;
 				done--;
 			}
-			free(instructions_array);
-			(instructions_array) = NULL;
+			free(instructionsArray);
+			(instructionsArray) = NULL;
 			return;
 		}
-		strcpy((instructions_array)[i], token);
+		strcpy((instructionsArray)[i], token);
 		i++;
 		token = strtok(NULL, delimiter);
 	}
-	(instructions_array)[counter] = NULL;
+	(instructionsArray)[counter] = NULL;
 }
 
 /**
@@ -97,9 +97,9 @@ void MontyLineReader(char *monty_path)
 		if (read > 1) /* not a new line */
 		{
 			tokenize();
-			if (instructions_array)/* not all spaces*/
+			if (instructionsArray)/* not all spaces*/
 			{
-				getFunc(instructions_array[0])();
+				getFunc(instructionsArray[0])();
 				freeInstructionsArray();
 			}
 		}

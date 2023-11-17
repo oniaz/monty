@@ -2,10 +2,10 @@
 
 int main(int argc, char **argv);
 unsigned int lineCount = 0;
-char **instructions_array = NULL;
+char **instructionsArray = NULL;
 char *lineBuffer = NULL;
-bingo_t *top = NULL;
-bingo_t *bottom = NULL;
+pile_t *top = NULL;
+pile_t *bottom = NULL;
 
 /**
  * main - checks number of arguemnts,

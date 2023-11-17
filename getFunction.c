@@ -10,17 +10,17 @@ void (*getFunc(char *str))(void)
 {
 	int i = 0;
 
-	instruction_t inst_op[] = {
+	instruction_t instructionsMenu[] = {
 		{"push", push},
 		{"pall", pall},
 		{NULL, NULL}};
 
-	while (inst_op[i].opcode != NULL && strcmp((inst_op[i].opcode), str) != 0)
+	while (instructionsMenu[i].opcode != NULL && strcmp((instructionsMenu[i].opcode), str) != 0)
 		i++;
-	if (!inst_op[i].opcode)
+	if (!instructionsMenu[i].opcode)
 	{
 		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", lineCount, str);
 		exit(EXIT_FAILURE);
 	}
-	return (inst_op[i].f);
+	return (instructionsMenu[i].f);
 }

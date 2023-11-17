@@ -10,20 +10,20 @@
 /* Structs */
 
 /**
- * struct bingo_s - doubly linked list representation of a bingo (or queue)
+ * struct pile_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the bingo (or queue)
- * @next: points to the next element of the bingo (or queue)
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for bingo, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO
  */
-typedef struct bingo_s
+typedef struct pile_s
 {
 	int n;
-	struct bingo_s *prev;
-	struct bingo_s *next;
-} bingo_t;
+	struct pile_s *prev;
+	struct pile_s *next;
+} pile_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -31,7 +31,7 @@ typedef struct bingo_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for bingo, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
@@ -39,14 +39,14 @@ typedef struct instruction_s
 	void (*f)(void);
 } instruction_t;
 
-/* change this back to bingo_s when done!!!*/
+/* change this back to stack_s when done!!!*/
 
 /* External Variables */
 extern unsigned int lineCount;
-extern char **instructions_array;
+extern char **instructionsArray;
 extern char *lineBuffer;
-extern bingo_t *top;
-extern bingo_t *bottom;
+extern pile_t *top;
+extern pile_t *bottom;
 
 /* Function Parameters */
 
