@@ -1,10 +1,5 @@
 #include "monty.h"
 
-/**
- * printTest - testing tokenization
- * 
- * Return: nothing
- */
 void printTest(void)
 {
 	int i = 0;
@@ -21,3 +16,4 @@ void printTest(void)
 	}
 	printf("-----\n");
 }
+// need to free line buffer, instructionsarray, stack

@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * _wordcounter - counts slices in a given string
+ * wordCounter - counts slices in a given string
  * @str: the given string
  *
  * Return: number of slices in the string
  */
-int _wordcounter(char *str)
+int wordCounter(char *str)
 {
 	int flag, c;
 
@@ -35,7 +35,7 @@ int _wordcounter(char *str)
  */
 void tokenize(void)
 {
-	int counter = _wordcounter(lineBuffer);
+	int counter = wordCounter(lineBuffer);
 	int i = 0, done = 0;
 	char *token;
 	const char *delimiter = " \n";
@@ -97,8 +97,11 @@ void MontyLineReader(char *monty_path)
 		if (read > 1) /* not a new line */
 		{
 			tokenize();
-			/* printTest(); */
-			freeInstructionsArray();
+			if (instructions_array)/* not all spaces*/
+			{
+				getFunc(instructions_array[0])(&top, lineCount);
+				freeInstructionsArray();
+			}
 		}
 	}
 	free(lineBuffer);
