@@ -22,5 +22,6 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	MontyLineReader(argv[1]);
+	freeStack();
 	return (0);
 }

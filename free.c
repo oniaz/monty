@@ -22,3 +22,20 @@ void freeInstructionsArray(void)
 	free(instructions_array);
 	instructions_array = NULL;
 }
+
+/**
+ * freeStack - frees the stack.
+ *
+ * Return: nothing.
+ */
+void freeStack(void)
+{
+	bingo_t *next;
+
+	while (top)
+	{
+		next = top->next;
+		free(top);
+		top = next;
+	}
+}
