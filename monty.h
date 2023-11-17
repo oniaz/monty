@@ -20,9 +20,9 @@
  */
 typedef struct bingo_s
 {
-        int n;
-        struct bingo_s *prev;
-        struct bingo_s *next;
+	int n;
+	struct bingo_s *prev;
+	struct bingo_s *next;
 } bingo_t;
 
 /**
@@ -35,8 +35,8 @@ typedef struct bingo_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(void);
+	char *opcode;
+	void (*f)(void);
 } instruction_t;
 
 /* change this back to bingo_s when done!!!*/
@@ -60,6 +60,8 @@ void MontyLineReader(char *monty_path);
 
 /* free and exit */
 void freeInstructionsArray(void);
+void freeStack(void);
+/* need to free line buffer, instructionsarray, s t a c k */
 
 /* misc */
 int isNumber(char *str);
