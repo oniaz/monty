@@ -6,7 +6,7 @@
  *
  * Return: pointer to the instruction function.
  */
-void (*getFunc(char *str))(stack_t **stack, unsigned int line_number)
+void (*getFunc(char *str))(void)
 {
 	int i = 0;
 

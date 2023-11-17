@@ -99,7 +99,7 @@ void MontyLineReader(char *monty_path)
 			tokenize();
 			if (instructions_array)/* not all spaces*/
 			{
-				getFunc(instructions_array[0])(&top, lineCount);
+				getFunc(instructions_array[0])();
 				freeInstructionsArray();
 			}
 		}

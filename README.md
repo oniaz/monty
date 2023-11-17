@@ -1,1 +1,1 @@
-0x19. C - stacks, Queues - LIFO, FIFO
+0x19. C - bingos, Queues - LIFO, FIFO

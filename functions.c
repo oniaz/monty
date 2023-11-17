@@ -1,25 +1,25 @@
 #include "monty.h"
 
 /**
- * push - adds a new stack element.
- * @stackTop: double pointer to the stack's top element.
+ * push - adds a new bingo element.
+ * @bingoTop: double pointer to the bingo's top element.
  * @lineNumber: current instruction line in the monty file.
  *
  * Return: nothing
  */
-void push(stack_t **stackTop, unsigned int lineNumber)
+void push(void)
 {
-	stack_t *s_item;
+	bingo_t *s_item;
 	int value;
 
 	if (!instructions_array[1] || !isNumber(instructions_array[1]))
 	{
-		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lineNumber);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(instructions_array[1]);
 
-	s_item = malloc(sizeof(stack_t));
+	s_item = malloc(sizeof(bingo_t));
 	if (!s_item)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
@@ -30,22 +30,21 @@ void push(stack_t **stackTop, unsigned int lineNumber)
 
 	s_item->n = value;
 	s_item->next = NULL;
-	s_item->prev = *stackTop;
-	*stackTop = s_item;
+	s_item->prev = top;
+	top = s_item;
 }
 
 /**
- * pall - pritns the stack from starting from the top element.
- * @stackTop: double pointer to the stack's top element.
+ * pall - pritns the bingo from starting from the top element.
+ * @bingoTop: double pointer to the bingo's top element.
  * @lineNumber: current instruction line in the monty file.
  *
  * Return: nothing
  */
-void pall(stack_t **stackTop, unsigned int lineNumber)
+void pall(void)
 {
-	stack_t *ptr = *stackTop;
+	bingo_t *ptr = top;
 
-	(void)lineNumber;
 	while (ptr)
 	{
 		printf("%d\n", ptr->n);
