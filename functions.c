@@ -2,8 +2,6 @@
 
 /**
  * push - adds a new bingo element.
- * @bingoTop: double pointer to the bingo's top element.
- * @lineNumber: current instruction line in the monty file.
  *
  * Return: nothing
  */
@@ -35,9 +33,7 @@ void push(void)
 }
 
 /**
- * pall - pritns the bingo from starting from the top element.
- * @bingoTop: double pointer to the bingo's top element.
- * @lineNumber: current instruction line in the monty file.
+ * pall - prints the bingo from starting from the top element.
  *
  * Return: nothing
  */
