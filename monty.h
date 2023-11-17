@@ -43,7 +43,7 @@ typedef struct instruction_s
 
 /* External Variables */
 extern unsigned int lineCount;
-extern char **instructionsArray;
+extern char **montyLine;
 extern char *lineBuffer;
 extern pile_t *top;
 extern pile_t *bottom;
@@ -71,5 +71,6 @@ void (*getFunc(char *s))(void);
 void push(void);
 void pall(void);
 void pint(void);
+void pop(void);
 
 #endif

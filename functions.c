@@ -10,12 +10,12 @@ void push(void)
 	pile_t *s_item;
 	int value;
 
-	if (!instructionsArray[1] || !isNumber(instructionsArray[1]))
+	if (!montyLine[1] || !isNumber(montyLine[1]))
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
-	value = atoi(instructionsArray[1]);
+	value = atoi(montyLine[1]);
 
 	s_item = malloc(sizeof(pile_t));
 	if (!s_item)
@@ -49,7 +49,7 @@ void pall(void)
 }
 
 /**
- * pint -  prints the value at the top of the stack.
+ * pint - prints the value at the top of the stack.
  *
  * Return: nothing
  */
@@ -62,4 +62,23 @@ void pint(void)
 	}
 	dprintf(STDOUT_FILENO, "%d\n", top->n);
 
+}
+
+/**
+ * pop - removes the top element of the stack.
+ *
+ * Return: nothing
+ */
+void pop(void)
+{
+	pile_t *newTop = top;
+
+	if (!top)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	newTop = top->prev;
+	free(top);
+	top = newTop;
 }

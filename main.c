@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv);
 unsigned int lineCount = 0;
-char **instructionsArray = NULL;
+char **montyLine = NULL;
 char *lineBuffer = NULL;
 pile_t *top = NULL;
 pile_t *bottom = NULL;

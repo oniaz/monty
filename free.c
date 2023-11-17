@@ -10,17 +10,17 @@ void freeInstructionsArray(void)
 {
 	int i = 0;
 
-	if (!instructionsArray)
+	if (!montyLine)
 		return;
 
-	while (instructionsArray[i])
+	while (montyLine[i])
 	{
-		free(instructionsArray[i]);
-		instructionsArray[i] = NULL;
+		free(montyLine[i]);
+		montyLine[i] = NULL;
 		i++;
 	}
-	free(instructionsArray);
-	instructionsArray = NULL;
+	free(montyLine);
+	montyLine = NULL;
 }
 
 /**
