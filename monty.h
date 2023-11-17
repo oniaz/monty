@@ -70,5 +70,6 @@ void (*getFunc(char *s))(void);
 /* instruction operations */
 void push(void);
 void pall(void);
+void pint(void);
 
 #endif

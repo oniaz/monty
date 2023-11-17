@@ -13,6 +13,7 @@ void (*getFunc(char *str))(void)
 	instruction_t instructionsMenu[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}};
 
 	while (instructionsMenu[i].opcode != NULL &&

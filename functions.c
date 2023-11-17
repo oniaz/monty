@@ -47,3 +47,19 @@ void pall(void)
 		ptr = ptr->prev;
 	}
 }
+
+/**
+ * pint -  prints the value at the top of the stack.
+ *
+ * Return: nothing
+ */
+void pint(void)
+{
+	if (!top)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	dprintf(STDOUT_FILENO, "%d\n", top->n);
+
+}
