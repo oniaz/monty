@@ -15,6 +15,7 @@ void (*getFunc(char *str))(void)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}};
 
 	while (instructionsMenu[i].opcode != NULL &&

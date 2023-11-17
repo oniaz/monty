@@ -82,3 +82,22 @@ void pop(void)
 	free(top);
 	top = newTop;
 }
+
+/**
+ * swap - swaps the top two elements of the stack.
+ *
+ * Return: nothing
+ */
+void swap(void)
+{
+	int tmp;
+
+	if (!top || !top->prev)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	tmp = top->n;
+	top->n = top->prev->n;
+	top->prev->n = tmp;
+}

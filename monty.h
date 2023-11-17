@@ -72,5 +72,6 @@ void push(void);
 void pall(void);
 void pint(void);
 void pop(void);
+void swap(void);
 
 #endif
