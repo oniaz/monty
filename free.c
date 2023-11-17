@@ -30,12 +30,12 @@ void freeInstructionsArray(void)
  */
 void freeStack(void)
 {
-	bingo_t *next;
+	bingo_t *newtop;
 
 	while (top)
 	{
-		next = top->next;
+		newtop = top->prev;
 		free(top);
-		top = next;
+		top = newtop;
 	}
 }
