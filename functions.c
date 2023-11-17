@@ -43,7 +43,7 @@ void pall(void)
 
 	while (ptr)
 	{
-		dprintf(STDIN_FILENO,"%d\n", ptr->n);
+		dprintf(STDOUT_FILENO, "%d\n", ptr->n);
 		ptr = ptr->prev;
 	}
 }
