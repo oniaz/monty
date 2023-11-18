@@ -65,6 +65,7 @@ void freeStack(void);
 
 /* misc */
 int isNumber(char *str);
+int isAscii(char c);
 void (*getFunc(char *s))(void);
 
 /* instruction operations */
@@ -80,5 +81,6 @@ void divide(void);
 void mul(void);
 void mod(void);
 void pchar(void);
+void pstr(void);
 
 #endif

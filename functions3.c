@@ -29,5 +29,21 @@ void pchar(void)
 	}
 
 	dprintf(STDOUT_FILENO, "%c\n", top->n);
+}
+/**
+ * pstr - prints the string starting at the top of the stack,
+ * followed by a new line.
+ *
+ * Return: nothing.
+ */
+void pstr(void)
+{
+	pile_t *ptr = top;
 
+	while (ptr && ptr->n && isAscii(ptr->n))
+	{
+		dprintf(STDOUT_FILENO, "%c", ptr->n);
+		ptr = ptr->prev;
+	}
+	dprintf(STDOUT_FILENO, "\n");
 }

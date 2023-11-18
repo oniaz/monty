@@ -21,3 +21,16 @@ int isNumber(char *str)
 	}
 	return (1);
 }
+
+/**
+ * isAscii - checks if a given value is in the ascii table.
+ * @c: value to be checked.
+ *
+ * Return: 1 if it's in the ascii table, 0 if not.
+ */
+int isAscii(char c)
+{
+	if (c < 0 || c > 127)
+		return (0);
+	return (1);
+}
