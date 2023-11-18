@@ -101,3 +101,4 @@ void swap(void)
 	top->n = top->prev->n;
 	top->prev->n = tmp;
 }
+

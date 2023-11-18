@@ -73,5 +73,7 @@ void pall(void);
 void pint(void);
 void pop(void);
 void swap(void);
+void add(void);
+void nop(void);
 
 #endif
