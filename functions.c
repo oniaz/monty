@@ -90,7 +90,8 @@ void pop(void)
 	newTop = top->prev;
 	free(top);
 	top = newTop;
-	top->next = NULL;
+	if (top)
+		top->next = NULL;
 }
 
 /**
