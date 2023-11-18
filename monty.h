@@ -65,7 +65,7 @@ void freeStack(void);
 
 /* misc */
 int isNumber(char *str);
-int isAscii(char c);
+int isAscii(int n);
 void (*getFunc(char *s))(void);
 
 /* instruction operations */

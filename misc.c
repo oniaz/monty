@@ -28,9 +28,9 @@ int isNumber(char *str)
  *
  * Return: 1 if it's in the ascii table, 0 if not.
  */
-int isAscii(char c)
+int isAscii(int n)
 {
-	if (c < 0 || c > 127)
+	if (n < 0 || n > 127)
 		return (0);
 	return (1);
 }
