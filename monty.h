@@ -74,7 +74,10 @@ void pint(void);
 void pop(void);
 void swap(void);
 void add(void);
-void sub(void);
 void nop(void);
+void sub(void);
+void divide(void);
+void mul(void);
+void mod(void);
 
 #endif

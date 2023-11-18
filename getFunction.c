@@ -17,8 +17,11 @@ void (*getFunc(char *str))(void)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-		{"sub", sub},
 		{"nop", nop},
+		{"sub", sub},
+		{"div", divide},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}};
 
 	while (instructionsMenu[i].opcode != NULL &&

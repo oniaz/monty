@@ -34,11 +34,63 @@ void sub(void)
 }
 
 /**
- * nop - doesn’t do anything.
+ * divide - divides the second top element of the stack by the
+ * top element of the stack.
  *
  * Return: nothing.
  */
-void nop(void)
+void divide(void)
 {
-	/* I'm super lazy and this works, so why not ?*/
+	if (!top || !top->prev)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't div, stack too short\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	if (!top->n) /* is zero */
+	{
+		dprintf(STDERR_FILENO, "L%u: division by zero\n", lineCount);
+		exit(EXIT_FAILURE);	
+	}
+	top->prev->n /= top->n;
+	pop();
+}
+
+/**
+ * mul - divides the second top element of the stack by the
+ * top element of the stack.
+ *
+ * Return: nothing.
+ */
+void mul(void)
+{
+	if (!top || !top->prev)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't mul, stack too short\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+
+	top->prev->n *= top->n;
+	pop();
+}
+
+/**
+ * div - divides the second top element of the stack by the
+ * top element of the stack.
+ *
+ * Return: nothing.
+ */
+void mod(void)
+{
+	if (!top || !top->prev)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't mod, stack too short\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	if (!top->n) /* is zero */
+	{
+		dprintf(STDERR_FILENO, "L%u: division by zero\n", lineCount);
+		exit(EXIT_FAILURE);	
+	}
+	top->prev->n %= top->n;
+	pop();
 }
