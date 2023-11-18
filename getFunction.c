@@ -22,6 +22,7 @@ void (*getFunc(char *str))(void)
 		{"div", divide},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}};
 
 	while (instructionsMenu[i].opcode != NULL &&

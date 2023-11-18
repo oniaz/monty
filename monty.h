@@ -79,5 +79,6 @@ void sub(void);
 void divide(void);
 void mul(void);
 void mod(void);
+void pchar(void);
 
 #endif
