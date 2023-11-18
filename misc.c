@@ -45,3 +45,13 @@ void getBottom(void)
 	if (bottom)
 		dprintf(STDOUT_FILENO, "bottom: %d\n", bottom->n);
 }
+
+/**
+ * pline - prints a line of asterisks.
+ *
+ * Return: nothing
+ */
+void pline(void)
+{
+	dprintf(STDOUT_FILENO, "************\n");
+}

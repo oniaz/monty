@@ -68,6 +68,7 @@ int isNumber(char *str);
 int isAscii(int n);
 void (*getFunc(char *s))(void);
 void getBottom(void);
+void pline(void);
 
 /* instruction operations */
 void push(void);

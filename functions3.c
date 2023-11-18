@@ -57,13 +57,14 @@ void pstr(void)
  */
 void rotl(void)
 {
-	if (bottom)
+	if (bottom && top != bottom)
 	{
 		pile_t *tmp = top->prev;
 
 		top->next = bottom;
 		top->prev = NULL;
 		bottom->prev = top;
+		bottom = top;
 		top = tmp;
 		top->next = NULL;
 	}
