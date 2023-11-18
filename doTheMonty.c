@@ -99,7 +99,8 @@ void MontyLineReader(char *monty_path)
 			tokenize();
 			if (montyLine)/* line that's not all spaces*/
 			{
-				getFunc(montyLine[0])();
+				if (montyLine[0][0] != '#')
+					getFunc(montyLine[0])();
 				freeInstructionsArray();
 			}
 		}
