@@ -49,7 +49,7 @@ void divide(void)
 	if (!top->n) /* is zero */
 	{
 		dprintf(STDERR_FILENO, "L%u: division by zero\n", lineCount);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 	}
 	top->prev->n /= top->n;
 	pop();
@@ -74,7 +74,8 @@ void mul(void)
 }
 
 /**
- * div - divides the second top element of the stack by the
+ * mod - computes the rest of the division of the second top element of the
+ * stack by the top element of the stack.
  * top element of the stack.
  *
  * Return: nothing.
@@ -89,7 +90,7 @@ void mod(void)
 	if (!top->n) /* is zero */
 	{
 		dprintf(STDERR_FILENO, "L%u: division by zero\n", lineCount);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 	}
 	top->prev->n %= top->n;
 	pop();
