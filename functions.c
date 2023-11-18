@@ -81,6 +81,7 @@ void pop(void)
 	newTop = top->prev;
 	free(top);
 	top = newTop;
+	top->next = NULL;
 }
 
 /**
@@ -101,4 +102,3 @@ void swap(void)
 	top->n = top->prev->n;
 	top->prev->n = tmp;
 }
-

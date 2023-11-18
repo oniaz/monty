@@ -24,7 +24,7 @@ int isNumber(char *str)
 
 /**
  * isAscii - checks if a given value is in the ascii table.
- * @c: value to be checked.
+ * @n: value to be checked.
  *
  * Return: 1 if it's in the ascii table, 0 if not.
  */
@@ -33,4 +33,15 @@ int isAscii(int n)
 	if (n < 0 || n > 127)
 		return (0);
 	return (1);
+}
+
+/**
+ * getBottom - prints the value of the bottom stack item.
+ *
+ * Return: nothing
+ */
+void getBottom(void)
+{
+	if (bottom)
+		dprintf(STDOUT_FILENO, "bottom: %d\n", bottom->n);
 }

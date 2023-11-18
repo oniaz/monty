@@ -30,6 +30,7 @@ void pchar(void)
 
 	dprintf(STDOUT_FILENO, "%c\n", top->n);
 }
+
 /**
  * pstr - prints the string starting at the top of the stack,
  * followed by a new line.
@@ -46,4 +47,24 @@ void pstr(void)
 		ptr = ptr->prev;
 	}
 	dprintf(STDOUT_FILENO, "\n");
+}
+
+/**
+ * rotl - moves the top item of the stack to the bottom.
+ * followed by a new line.
+ *
+ * Return: nothing.
+ */
+void rotl(void)
+{
+	if (bottom)
+	{
+		pile_t *tmp = top->prev;
+
+		top->next = bottom;
+		top->prev = NULL;
+		bottom->prev = top;
+		top = tmp;
+		top->next = NULL;
+	}
 }

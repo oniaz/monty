@@ -67,6 +67,7 @@ void freeStack(void);
 int isNumber(char *str);
 int isAscii(int n);
 void (*getFunc(char *s))(void);
+void getBottom(void);
 
 /* instruction operations */
 void push(void);
@@ -82,5 +83,6 @@ void mul(void);
 void mod(void);
 void pchar(void);
 void pstr(void);
+void rotl(void);
 
 #endif
