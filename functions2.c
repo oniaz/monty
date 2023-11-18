@@ -26,7 +26,7 @@ void sub(void)
 {
 	if (!top || !top->prev)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", lineCount);
+		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	top->prev->n -= top->n;
