@@ -51,7 +51,6 @@ void pstr(void)
 
 /**
  * rotl - moves the top item of the stack to the bottom.
- * followed by a new line.
  *
  * Return: nothing.
  */
@@ -67,5 +66,26 @@ void rotl(void)
 		bottom = top;
 		top = tmp;
 		top->next = NULL;
+	}
+}
+
+/**
+ * rotr - moves the bottom item of the stack to the top.
+ *
+ * Return: nothing.
+ */
+void rotr(void)
+{
+	if (bottom && top != bottom)
+	{
+		pile_t *tmp = bottom->next;
+
+		bottom->prev = top;
+		bottom->next = NULL;
+		top->next = bottom;
+		top = bottom;
+		bottom = tmp;
+		bottom->prev = NULL;
+		bottom->next = tmp->next;
 	}
 }

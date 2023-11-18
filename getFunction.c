@@ -27,6 +27,7 @@ void (*getFunc(char *str))(void)
 		{"bottom", getBottom},
 		{"rotl", rotl},
 		{"pline", pline},
+		{"rotr", rotr},
 		{NULL, NULL}};
 
 	while (instructionsMenu[i].opcode != NULL &&

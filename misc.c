@@ -44,6 +44,9 @@ void getBottom(void)
 {
 	if (bottom)
 		dprintf(STDOUT_FILENO, "bottom: %d\n", bottom->n);
+
+	if (bottom->next)
+		dprintf(STDOUT_FILENO, "bottom->next: %d\n", bottom->next->n);
 }
 
 /**

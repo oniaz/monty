@@ -23,8 +23,14 @@ void push(void)
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	} /*failed to allocate*/
+
 	if (!bottom)
 		bottom = s_item;
+	else if (!bottom->next)
+		bottom->next = s_item;
+
+	if (top)
+		top->next = s_item;
 
 	s_item->n = value;
 	s_item->next = NULL;
@@ -78,6 +84,9 @@ void pop(void)
 		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
+	if (top == bottom->next)
+		bottom->next = NULL;
+
 	newTop = top->prev;
 	free(top);
 	top = newTop;

@@ -85,5 +85,6 @@ void mod(void);
 void pchar(void);
 void pstr(void);
 void rotl(void);
+void rotr(void);
 
 #endif
