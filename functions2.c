@@ -17,6 +17,23 @@ void add(void)
 }
 
 /**
+ * sub - subtracts the top element of the stack from the second
+ * top element of the stack.
+ *
+ * Return: nothing.
+ */
+void sub(void)
+{
+	if (!top || !top->prev)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", lineCount);
+		exit(EXIT_FAILURE);
+	}
+	top->prev->n -= top->n;
+	pop();
+}
+
+/**
  * nop - doesn’t do anything.
  *
  * Return: nothing.
